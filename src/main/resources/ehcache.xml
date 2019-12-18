@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ehcache>
+	<diskStore path="java.io.tmpdir"/>  
+	<!--<diskStore path="/tmp" />-->
+	<!-- 配置默认的缓存区 -->
+	<defaultCache
+		maxElementsInMemory="10000"
+		eternal="false"
+		timeToIdleSeconds="120"
+		timeToLiveSeconds="120"
+		maxElementsOnDisk="10000000"
+		diskExpiryThreadIntervalSeconds="120"
+		memoryStoreEvictionPolicy="LRU"/>
+	<!-- 配置名为public的缓存区 -->
+	<!-- diskPersistent:缓存到磁盘 -->
+	<!--ternal:缓存中对象是否永久有效,timeToIdleSeconds和timeToLiveSeconds无效 -->
+	<!--默认2小时-->
+	<cache name="public"
+		diskPersistent="true"
+		maxElementsInMemory="1000"
+		eternal="false"
+		overflowToDisk="true"
+		timeToIdleSeconds="0"
+		timeToLiveSeconds="7200"
+		memoryStoreEvictionPolicy="LRU" />
+	<!--默认6分钟-->
+	<cache name="user"
+		maxElementsInMemory="10000"
+		eternal="false"
+		overflowToDisk="true"
+		timeToIdleSeconds="0"
+		timeToLiveSeconds="360" />
+	<!--默认6分钟-->
+	<cache name="wxconf"
+		maxElementsInMemory="100"
+		eternal="false"
+		overflowToDisk="true"
+		timeToIdleSeconds="0"
+		timeToLiveSeconds="360" />
+</ehcache>

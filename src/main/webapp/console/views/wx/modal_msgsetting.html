@@ -1,0 +1,101 @@
+ 
+<div class="modal-content">
+	<div class="modal-header">
+		<button ng-click="cancel()" type="button" class="close">
+			<span aria-hidden="true">&times;</span><span class="sr-only">Close</span>
+		</button>
+		<h4 class="modal-title">消息设置</h4>
+	</div>
+	<div class="modal-body">
+		<div class="wrapper wrapper-content animated fadeInRight">
+
+			<form class="form-horizontal m-t-md " name="myForm" novalidate
+				action="">
+				<div class="form-group">
+					<label class="col-sm-2 control-label"><span
+						class="text-danger">*</span>类型:</label>
+					<div class="col-sm-10">
+						<select width=100 chosen disable-search="true"
+							class="chosen-select" no-results-text="'没有找到相应条目'"
+							ng-model="classSel" data-placeholder-text-single="'请选择...'"
+							ng-options="item.name for item in classOpt">
+							<option value=""></option>
+						</select>
+					</div>
+				</div>
+
+				<div class="form-group">
+					<label class="col-sm-2 control-label"><span
+						class="text-danger">*</span>名称:</label>
+					<div class="col-sm-10">
+						<input type="text" required ng-maxlength="50"
+							class="form-control ng-pristine ng-untouched ng-valid ng-empty"
+							placeholder="请输入内容" name="name" ng-model="item.name">
+						<div class="text-danger"
+							ng-if="myForm.name.$dirty && myForm.name.$invalid">
+							<span ng-if="myForm.name.$error.required"> 输入不能为空 </span> <span
+								ng-show="myForm.name.$error.maxlength">不能超过50个字符 </span>
+						</div>
+					</div>
+				</div>
+
+				<div class="form-group">
+					<label class="col-sm-2 control-label"><span
+						class="text-danger">*</span>编码:</label>
+					<div class="col-sm-10">
+						<input type="text" required ng-maxlength="500"
+							class="form-control ng-pristine ng-untouched ng-valid ng-empty"
+							placeholder="请输入内容" name="code" ng-model="item.code">
+						<div class="text-danger"
+							ng-if="myForm.code.$dirty && myForm.code.$invalid">
+							<span ng-if="myForm.code.$error.required"> 输入不能为空 </span> <span
+								ng-show="myForm.code.$error.maxlength">不能超过500个字符 </span>
+						</div>
+					</div>
+				</div>
+				<div class="form-group">
+					<label class="col-sm-2 control-label"><span
+						class="text-danger">*</span>类型:</label>
+					<div class="col-sm-10">
+						<select width=100 chosen disable-search="true"
+							class="chosen-select" no-results-text="'没有找到相应条目'"
+							ng-model="msgtypeSel" data-placeholder-text-single="'请选择...'"
+							ng-options="item.name for item in msgtypeOpt">
+							<option value=""></option>
+						</select>
+					</div>
+				</div>
+
+				<div class="form-group">
+					<label class="col-sm-2 control-label">备注:</label>
+					<div class="col-sm-10">
+						<input ng-maxlength="200" type="text"
+							class="form-control ng-pristine ng-untouched ng-valid ng-empty"
+							placeholder="请输入内容" name="mark" ng-model="item.mark">
+						<div class="text-danger"
+							ng-show="myForm.mark.$dirty && myForm.mark.$invalid">
+							<span ng-show="myForm.mark.$error.maxlength">不能超过20个字符 </span>
+						</div>
+					</div>
+				</div>
+				<div class="form-group">
+					<label class="col-sm-2 control-label">内容:</label>
+					<div class="col-sm-10">
+						<textarea type="text" style="height: 400px"
+							class="form-control ng-pristine ng-untouched ng-valid ng-empty"
+							placeholder="请输入内容" name="threshold" ng-model="item.value"></textarea>
+
+					</div>
+				</div>
+
+
+			</form>
+
+		</div>
+	</div>
+	<div class="modal-footer">
+		<button ng-click="cancel()" class="btn    btn-warning">取消</button>
+		<button ng-disabled="myForm.$invalid" ng-click="sure()"
+			class="btn   btn-primary">确认</button>
+	</div>
+</div>

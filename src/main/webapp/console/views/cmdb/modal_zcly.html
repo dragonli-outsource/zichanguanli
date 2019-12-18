@@ -1,0 +1,93 @@
+<style>
+@media ( min-width : 992px) {
+	.modal-blg {
+		width: 95%;
+	}
+}
+</style>
+<div class="modal-content">
+	<div class="modal-header">
+		<button ng-click="cancel()" type="button" class="close">
+			<span aria-hidden="true">&times;</span><span class="sr-only">Close</span>
+		</button>
+		<h4 class="modal-title">资产查询</h4>
+	</div>
+	<div class="modal-body">
+		<div class="wrapper wrapper-content animated fadeInRight">
+			<div class="row">
+				<div class="wrapper wrapper-content animated fadeInRight">
+					<form class="form-horizontal m-t-md " name="myForm" novalidate
+						action="">
+
+						<div class="form-group">
+							<label class="col-sm-2 control-label"><span
+								class="text-danger">*</span>标题:</label>
+							<div class="col-sm-10">
+								<input type="text" required ng-maxlength="100"
+									class="form-control ng-pristine ng-untouched ng-valid ng-empty"
+									placeholder="请输入标题" name="actusername" ng-model="data.dtitle">
+								<div class="text-danger"
+									ng-if="myForm.dtitle.$dirty && myForm.dtitle.$invalid">
+									<span ng-if="myForm.dtitle.$error.required"> 输入不能为空 </span> <span
+										ng-show="myForm.dtitle.$error.maxlength">不能超过500个字符 </span>
+								</div>
+							</div>
+						</div>
+						<div class="form-group">
+							<label class="col-sm-2 control-label"><span
+								class="text-danger">*</span>描述:</label>
+							<div class="col-sm-10">
+								<input type="text" required ng-maxlength="500"
+									class="form-control ng-pristine ng-untouched ng-valid ng-empty"
+									placeholder="请输入描述" name="ct" ng-model="data.dct">
+								<div class="text-danger"
+									ng-if="myForm.dct.$dirty && myForm.dct.$invalid">
+									<span ng-if="myForm.dct.$error.required"> 输入不能为空 </span> <span
+										ng-show="myForm.dct.$error.maxlength">不能超过500个字符 </span>
+								</div>
+							</div>
+						</div>
+						<div class="form-group">
+							<label class="col-sm-2 control-label"><span
+								class="text-danger">*</span>{{actmsg}}:</label>
+							<div class="col-sm-10">
+								<input type="text" required ng-maxlength="50"
+									class="form-control ng-pristine ng-untouched ng-valid ng-empty"
+									placeholder="请输入人员" name="df1" ng-model="data.df1">
+								<div class="text-danger"
+									ng-if="myForm.df1.$dirty && myForm.df1.$invalid">
+									<span ng-if="myForm.df1.$error.required"> 输入不能为空 </span> <span
+										ng-show="myForm.df1.$error.maxlength">不能超过500个字符 </span>
+								</div>
+							</div>
+						</div>
+						<div class="form-group">
+							<label class="col-sm-2 control-label">归还时间:</label>
+							<div class="col-sm-10">
+								<input type="text"
+									class="form-control ng-pristine ng-untouched ng-valid ng-empty"
+									placeholder="请输入时间" name="df2" ng-model="data.df2">
+							</div>
+						</div>
+						<div class="form-group">
+							<label class="col-sm-2 control-label"><span
+								class="text-danger">*</span>资产列表:</label>
+							<div class="col-sm-10">
+								<a href="javascript:void()" style="margin-top: 3px;"
+									ng-click="selectzc()" class="btn btn-primary">选择资产</a>
+								<table datatable="ed" dt-options="dtOptions"
+									dt-instance="dtInstance" dt-columns="dtColumns"
+									dt-column-defs="dtColumnDefs" class="table table-hover">
+								</table>
+							</div>
+						</div>
+					</form>
+				</div>
+
+			</div>
+			<div class="modal-footer" style ="text-align:center">
+				<button ng-click="cancel()" class="btn btn-warning">取消</button>
+				<button ng-disabled="myForm.$invalid" ng-click="sure()"
+					class="btn btn-primary">确认</button>
+			</div>
+		</div>

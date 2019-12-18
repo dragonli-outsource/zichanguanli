@@ -1,0 +1,43 @@
+<div ng-controller="sysOnlineSessionCtl">
+
+	<div class="wrapper wrapper-content animated fadeInRight">
+		<div class="row">
+			<div class="col-lg-12">
+				<div class="ibox">
+					<div class="ibox-content">
+						<form role="form" class="form-inline">
+							<!-- 	<div class="form-group">
+								<label for="class">用户组</label> <select id="class"
+									style="width: 120px;" chosen disable-search="true"
+									class="chosen-select" no-results-text="'没有找到相应条目'"
+									ng-model="userGroupSel" data-placeholder-text-single="'请选择...'"
+									ng-options="item.NAME for item in userGroupOpt">
+									<option value=""></option>
+								</select>
+							</div>		 -->
+							<button ng-click="query()" class="btn btn-sm btn-primary"
+								type="submit">刷新</button>
+
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-lg-12">
+				<div class="ibox">
+					<div class="ibox-content">
+						<table datatable="ed" dt-options="dtOptions"
+							dt-instance="dtInstance" dt-columns="dtColumns"
+							dt-column-defs="dtColumnDefs" class="table table-hover">
+						</table>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+
+
+

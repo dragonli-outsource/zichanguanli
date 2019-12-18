@@ -1,0 +1,26 @@
+ 
+<div class="modal-content">
+	<div class="modal-header">
+		<button ng-click="cancel()" type="button" class="close">
+			<span aria-hidden="true">&times;</span><span class="sr-only">Close</span>
+		</button>
+		<h4 class="modal-title">权限</h4>
+	</div>
+	<div class="modal-body">
+		<div class="wrapper wrapper-content animated fadeInRight">
+
+			<select ng-options="id as name for (id, name) in userRoles" multiple
+				ng-model="roleSel" bs-duallistbox></select>
+
+
+		</div>
+	</div>
+
+	<div class="modal-footer">
+		<button ng-click="cancel()" class="btn    btn-warning">取消</button>
+		<button ng-disabled="myForm.$invalid" ng-click="sure()"
+			class="btn   btn-primary">确认</button>
+	</div>
+</div>
+
+

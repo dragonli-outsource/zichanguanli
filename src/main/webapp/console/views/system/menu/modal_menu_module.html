@@ -1,0 +1,44 @@
+ 
+<div class="modal-content">
+	<div class="modal-header">
+		<button ng-click="cancel()" type="button" class="close">
+			<span aria-hidden="true">&times;</span><span class="sr-only">Close</span>
+		</button>
+		<h4 class="modal-title">设置模块</h4>
+	</div>
+	<div class="modal-body">
+		<div class="wrapper wrapper-content animated fadeInRight">
+
+			<form class="form-horizontal m-t-md " name="myForm" novalidate
+				action="">
+				<div class="form-group">
+					<label class="col-sm-2 control-label">节点名称</label>
+					<div class="col-sm-10">
+						<input type="text" ng-disabled='nameaction'
+							class="form-control ng-pristine ng-untouched ng-valid ng-empty"
+							placeholder="请输入内容" name="name" ng-model="item.node_name">
+					</div>
+				</div>
+
+				<div class="form-group">
+					<label class="col-sm-2 control-label">模块</label>
+					<div class="col-sm-10">
+						<select width=100 chosen disable-search="true"
+							class="chosen-select" no-results-text="'没有找到相应条目'"
+							ng-model="modulesSel" data-placeholder-text-single="'请选择...'"
+							ng-options="item.module_name for item in modulesOpt">
+							<option value=""></option>
+						</select>
+					</div>
+				</div>
+
+
+			</form>
+
+		</div>
+	</div>
+	<div class="modal-footer">
+		<button ng-click="cancel()" class="btn    btn-warning">取消</button>
+		<button ng-click="sure()" class="btn   btn-primary">确认</button>
+	</div>
+</div>

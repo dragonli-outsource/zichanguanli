@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.dt.module.flow.mapper.SysProcessDataMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.dt.module.flow.entity.SysProcessData">
+        <id column="id" property="id" />
+    <result column="dr" property="dr" />
+    <result column="create_by" property="createBy" />
+    <result column="create_time" property="createTime" />
+    <result column="update_by" property="updateBy" />
+    <result column="update_time" property="updateTime" />
+        <result column="busid" property="busid" />
+        <result column="ptitle" property="ptitle" />
+        <result column="pstartuserid" property="pstartuserid" />
+        <result column="pstartusername" property="pstartusername" />
+        <result column="processkey" property="processkey" />
+        <result column="processname" property="processname" />
+        <result column="processversion" property="processversion" />
+        <result column="processInstanceId" property="processInstanceId" />
+        <result column="pstatus" property="pstatus" />
+        <result column="pstatusdtl" property="pstatusdtl" />
+        <result column="ptype" property="ptype" />
+        <result column="duuid" property="duuid" />
+        <result column="dtitle" property="dtitle" />
+        <result column="dct" property="dct" />
+        <result column="dname" property="dname" />
+        <result column="dmark" property="dmark" />
+        <result column="dmessage" property="dmessage" />
+        <result column="dsex" property="dsex" />
+        <result column="dstatus" property="dstatus" />
+        <result column="dtype" property="dtype" />
+        <result column="dpwd" property="dpwd" />
+        <result column="daddr" property="daddr" />
+        <result column="dcontact" property="dcontact" />
+        <result column="dpic" property="dpic" />
+        <result column="dfile" property="dfile" />
+        <result column="duser" property="duser" />
+        <result column="dresult" property="dresult" />
+        <result column="dtotal" property="dtotal" />
+        <result column="dbacktime" property="dbacktime" />
+        <result column="df1" property="df1" />
+        <result column="df2" property="df2" />
+        <result column="df3" property="df3" />
+        <result column="df4" property="df4" />
+        <result column="df5" property="df5" />
+        <result column="df6" property="df6" />
+        <result column="df7" property="df7" />
+        <result column="df8" property="df8" />
+        <result column="df9" property="df9" />
+        <result column="df10" property="df10" />
+        <result column="dn1" property="dn1" />
+        <result column="dn2" property="dn2" />
+        <result column="dn3" property="dn3" />
+        <result column="dn4" property="dn4" />
+        <result column="dn5" property="dn5" />
+        <result column="dn6" property="dn6" />
+        <result column="dn7" property="dn7" />
+        <result column="dn8" property="dn8" />
+        <result column="dn9" property="dn9" />
+        <result column="dn10" property="dn10" />
+        <result column="dmethod" property="dmethod" />
+    </resultMap>
+
+</mapper>

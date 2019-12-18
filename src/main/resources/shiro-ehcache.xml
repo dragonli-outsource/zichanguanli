@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ehcache name="shirocache">
+	<diskStore path="java.io.tmpdir" />
+	<!-- timeToIdleSeconds:当缓存闲置n秒后销毁
+		 eternal:对象是否永久有效，一但设置了，timeout将不起作用
+		 timeToLiveSeconds:当缓存存活n秒后销毁-->
+	<cache name="passwordRetryCache"
+		maxEntriesLocalHeap="2000"
+		eternal="false"
+		timeToIdleSeconds="1800"  
+		timeToLiveSeconds="0"
+		overflowToDisk="false"
+		statistics="true">
+	</cache>
+    
+	<!--  maxEntriesLocalHeap 缓存最大个数-->
+	<!-- 授权缓存 -->
+	<cache name="authorizationCache"
+		maxEntriesLocalHeap="2000"  
+		eternal="false"
+		timeToIdleSeconds="3600"
+		timeToLiveSeconds="0"
+		overflowToDisk="false"
+		statistics="true">
+	</cache>
+ 
+   
+	<!--  身份验证缓存 -->
+	<cache name="authenticationCache"
+		maxEntriesLocalHeap="2000"
+		eternal="false"
+		timeToIdleSeconds="3600"
+		timeToLiveSeconds="0"
+		overflowToDisk="false"
+		statistics="true">
+	</cache>
+ 
+	<cache name="shiro_cache"
+		maxElementsInMemory="2000"
+		maxEntriesLocalHeap="2000"
+		eternal="false"
+		timeToIdleSeconds="0"
+		timeToLiveSeconds="0"
+		maxElementsOnDisk="0"
+		overflowToDisk="true"
+		memoryStoreEvictionPolicy="FIFO"
+		statistics="true">
+	</cache>
+	<cache name="shiro-activeSessionCache"
+		maxEntriesLocalHeap="2000"
+		eternal="false"
+		timeToIdleSeconds="3600"
+		timeToLiveSeconds="0"
+		overflowToDisk="false"
+		statistics="true">
+	</cache>
+</ehcache>

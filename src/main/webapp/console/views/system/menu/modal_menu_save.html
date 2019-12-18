@@ -1,0 +1,174 @@
+<!-- ng-valid : 验证通过
+ng-invalid : 验证失败
+ng-valid-[key] : 由$setValidity添加的所有验证通过的值
+ng-invalid-[key] : 由$setValidity添加的所有验证失败的值
+ng-pristine : 表示用户是否修改了表单。如果为 ture ，表示没有修改过； false 表示修改过
+ng-dirty : 控件输入值已变更，布尔型属性，当且仅当用户实际已经修改的表单。不管表单是否通过验证：如果表单有过变动,则true
+ng-touched : 控件已失去焦点
+ng-untouched : 控件未失去焦点
+ng-pending : 任何为满足$asyncValidators的情况
+required
+ng-minlength="5"
+ng-maxlength="20"
+不指定条件myForm.name.$dirty && myForm.name.$invalid 条件都不满足
+ 
+ 
+  <select chosen disable-search="true" ng-model="somefun" name="fun" required>
+      <option></option>
+      <option>Great</option>
+      <option>fun</option>
+      <option>Great fun .. indeed</option>
+    </select>
+    <span ng-if="form.fun.$invalid && form.fun.$touched">
+      Error: {{form.fun.$error}}
+    </span>
+    
+    
+ -->
+ 
+<div class="modal-content">
+	<div class="modal-header">
+		<button ng-click="cancel()" type="button" class="close">
+			<span aria-hidden="true">&times;</span><span class="sr-only">Close</span>
+		</button>
+		<h4 class="modal-title">节点</h4>
+	</div>
+	<div class="modal-body">
+		<div class="wrapper wrapper-content animated fadeInRight">
+
+			<form class="form-horizontal m-t-md " name="myForm" novalidate
+				action="">
+
+
+				<div ng-show="item.actiontype=='addmaster'">
+					<div class="form-group">
+						<label class="col-sm-2 control-label"><span
+							class="text-danger">*</span>主菜单:</label>
+						<div class="col-sm-10">
+							<select  chosen disable-search="true"  width="100"
+								class="chosen-select" no-results-text="'没有找到相应条目'"
+								ng-model="topMenuSel" data-placeholder-text-single="'请选择...'"
+								ng-options="item.name for item in topMenuOpt">
+								<option value=""></option>
+							</select>
+						</div>
+					</div>
+				</div>
+
+				<div class="form-group">
+					<label class="col-sm-2 control-label"><span
+						class="text-danger">*</span>名称:</label>
+					<div class="col-sm-10">
+						<input type="text" required ng-maxlength="10"
+							class="form-control ng-pristine ng-untouched ng-valid ng-empty"
+							placeholder="请输入内容" name="name" ng-model="item.node_name">
+						<div class="text-danger"
+							ng-if="myForm.name.$dirty && myForm.name.$invalid">
+							<span ng-if="myForm.name.$error.required"> 输入不能为空 </span> <span
+								ng-show="myForm.name.$error.maxlength">不能超过10个字符 </span>
+						</div>
+					</div>
+				</div>
+
+				<div class="form-group">
+					<label class="col-sm-2 control-label">路径:</label>
+					<div class="col-sm-10">
+						<input type="text" ng-maxlength="30"
+							class="form-control ng-pristine ng-untouched ng-valid ng-empty"
+							placeholder="请输入内容" name="key" ng-model="item.keyvalue">
+						<div class="text-danger"
+							ng-if="myForm.key.$dirty && myForm.key.$invalid">
+							<span ng-if="myForm.key.$error.maxlength">不能超过30个字符 </span>
+						</div>
+					</div>
+				</div>
+
+				<div class="form-group">
+					<label class="col-sm-2 control-label">图片:</label>
+					<div class="col-sm-10">
+						<input type="text" ng-maxlength="20"
+							class="form-control ng-pristine ng-untouched ng-valid ng-empty"
+							placeholder="请输入内容" name="logo" ng-model="item.logo">
+						<div class="text-danger"
+							ng-show="myForm.logo.$dirty && myForm.log.$invalid">
+							<span ng-show="myForm.logo.$error.maxlength">不能超过20个字符 </span>
+						</div>
+					</div>
+				</div>
+
+
+
+				<div class="form-group">
+					<label class="col-sm-2 control-label">备注:</label>
+					<div class="col-sm-10">
+						<input type="text" ng-maxlength="200"
+							class="form-control ng-pristine ng-untouched ng-valid ng-empty"
+							placeholder="请输入内容" name="mark" ng-model="item.mark">
+						<div class="text-danger"
+							ng-show="myForm.mark.$dirty && myForm.mark.$invalid">
+							<span ng-show="myForm.mark.$error.maxlength">不能超过20个字符 </span>
+						</div>
+					</div>
+				</div>
+
+				<!-- 	<div class="form-group">
+							<label class="col-sm-2 control-label">功能状态:</label>
+							<div class="col-sm-10">
+								<select width=100 chosen disable-search="true"
+									class="chosen-select" no-results-text="'没有找到相应条目'"
+									ng-model="actionSel" data-placeholder-text-single="'请选择...'"
+									ng-options="item.name for item in actionOpt">
+									<option value=""></option>
+								</select>
+							</div>
+						</div> -->
+
+				<div class="form-group">
+					<label class="col-sm-2 control-label">前端显示:</label>
+					<div class="col-sm-10">
+						<select chosen disable-search="true"
+							class="chosen-select" no-results-text="'没有找到相应条目'"
+							ng-model="showSel" data-placeholder-text-single="'请选择...'"
+							ng-options="item.name for item in showOpt">
+							<option value=""></option>
+						</select>
+					</div>
+				</div>
+				<div class="form-group">
+					<label class="col-sm-2 control-label">节点类型:</label>
+					<div class="col-sm-10">
+						<select chosen disable-search="true"
+							class="chosen-select" no-results-text="'没有找到相应条目'"
+							ng-model="nodeSel" data-placeholder-text-single="'请选择...'"
+							ng-options="item.name for item in nodeOpt">
+							<option value=""></option>
+						</select>
+					</div>
+				</div>
+
+
+				<div class="form-group">
+					<label class="col-sm-2 control-label">顺序:</label>
+					<div class="col-sm-10">
+						<input type="number" ng-maxlength="20"
+							class="form-control ng-pristine ng-untouched ng-valid ng-empty"
+							placeholder="请输入顺序" name="sort" ng-model="item.sort">
+						<div class="text-danger"
+							ng-show="myForm.sort.$dirty && myForm.sort.$invalid">
+							<span ng-show="myForm.sort.$error.maxlength">不能超过20个字符 </span>
+						</div>
+					</div>
+				</div>
+
+
+
+			</form>
+
+		</div>
+	</div>
+	<div class="modal-footer">
+		<button ng-click="cancel()" class="btn    btn-warning">取消</button>
+		<button ng-disabled="myForm.$invalid" ng-click="sure()"
+			class="btn   btn-primary">确认</button>
+	</div>
+</div>

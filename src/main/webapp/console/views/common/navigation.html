@@ -1,0 +1,43 @@
+<nav class="navbar-default navbar-static-side" role="navigation">
+	<div class="sidebar-collapse">
+		<ul side-navigation class="nav metismenu" id="side-menu">
+
+			<!-- <div class="nav-header ">
+				<div class="profile-element"
+					style="padding-left: 20px; padding-top: 15px;">
+					<a href="javacript:void(0);" style="font-size: 15px;"> <i
+						class="fa fa-btc"></i> <span class="hidden-folded m-l-xs">后台</span>
+					</a>
+				</div>
+				<div class="logo-element">
+					<i class="fa fa-home" aria-hidden="true"></i>
+				</div>
+			</div> -->
+			<li ng-repeat="first in menu"
+				ng-class="{active: $state.includes('{{first.state}}')}"><a
+				class="" ui-sref="{{first.state}}"> <i
+					ng-class="{false: 'fa fa-th-large',true:'{{first.logo}}'}[menuLogoIsExist(first.logo)]"></i>
+					<span class="nav-lank nav-label nav-first-level">{{first.node_name}}</span>
+					<span ng-if="first.children_cnt>0" class="fa arrow"></span>
+			</a>
+				<ul ng-if="first.children_cnt>0"
+					class="nav nav-second-level collapse "
+					ng-class="{in: $state.includes('{{first.state}}')}">
+					<li ng-class="{active: $state.includes('{{second.state}}')}"
+						ng-repeat="second in first.children"><a
+						id="menu_{{second.state}}" ui-sref="{{second.state}}"
+						ui-sref-opts="{reload: true, notify: true ,custom:{ btns:'{{second.btn}}' } }"
+						ui-state-params="link.params">{{second.node_name}} <span
+							ng-if="second.children_cnt>0" class="fa arrow"></span>
+					</a>
+						<ul ng-if="second.children_cnt>0"
+							ng-class="{in: $state.includes('{{third.state}}')}"
+							class="nav nav-third-level collapse ">
+							<li ui-sref-active="active22"
+								ng-repeat="third in second.children"><a
+								ui-sref="{{third.state}}">{{third.node_name}} </a></li>
+						</ul></li>
+				</ul></li>
+		</ul>
+	</div>
+</nav>

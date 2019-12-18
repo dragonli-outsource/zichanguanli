@@ -1,0 +1,45 @@
+<div ng-controller="cmdbouterContactListCtl">
+	<div class="wrapper wrapper-content animated fadeInRight">
+		<div class="row">
+			<div class="col-lg-12">
+				<div class="ibox">
+					<div class="ibox-content">
+						<form role="form" class="form-inline">
+							<div class="form-group">
+								<label for="class">状态:</label> <select id="class"
+									style="width: 120px;" chosen disable-search="true"
+									class="chosen-select" no-results-text="'没有找到相应条目'"
+									ng-model="statusSel" data-placeholder-text-single="'请选择...'"
+									ng-options="item.name for item in statusOpt">
+									<option value=""></option>
+								</select>
+							</div>
+							<input type="text"  class="form-control "
+								placeholder="搜索内容" name="search" ng-model="search">
+							<button ng-click="query()" class="btn btn-sm btn-primary"
+								type="submit">查询</button>
+							<button ng-click="querylook()" class="btn btn-sm btn-primary"
+								type="submit">预览</button>
+							<button ng-click="addNode()" class="btn btn-sm btn-primary"
+								type="submit">新增节点</button>
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-lg-12">
+				<div class="ibox float-e-margins">
+					<div class="ibox-content">
+						<div id="content_contact"></div>
+					</div>
+				</div>
+			</div>
+
+		</div>
+	</div>
+</div>
+
+
+
+

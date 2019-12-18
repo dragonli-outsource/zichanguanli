@@ -1,0 +1,122 @@
+ 
+<div class="modal-content">
+	<div class="modal-header">
+		<button ng-click="cancel()" type="button" class="close">
+			<span aria-hidden="true">&times;</span><span class="sr-only">Close</span>
+		</button>
+		<h4 class="modal-title">图文消息</h4>
+	</div>
+	<div class="modal-body">
+		<div class="wrapper wrapper-content animated fadeInRight">
+
+			<form class="form-horizontal m-t-md " name="myForm" novalidate
+				action="">
+
+				<div class="form-group">
+					<label class="col-sm-2 control-label"><span
+						class="text-danger">*</span>标题:</label>
+					<div class="col-sm-10">
+						<input type="text" required ng-maxlength="50"
+							class="form-control ng-pristine ng-untouched ng-valid ng-empty"
+							placeholder="请输入内容" name="title" ng-model="item.title">
+						<div class="text-danger"
+							ng-if="myForm.title.$dirty && myForm.title.$invalid">
+							<span ng-if="myForm.title.$error.required"> 输入不能为空 </span> <span
+								ng-show="myForm.title.$error.maxlength">不能超过50个字符 </span>
+						</div>
+					</div>
+				</div>
+
+				<div class="form-group">
+					<label class="col-sm-2 control-label"><span
+						class="text-danger">*</span>描述:</label>
+					<div class="col-sm-10">
+						<input type="text" required ng-maxlength="500"
+							class="form-control ng-pristine ng-untouched ng-valid ng-empty"
+							placeholder="请输入内容" name="msgdesc" ng-model="item.msgdesc">
+						<div class="text-danger"
+							ng-if="myForm.msgdesc.$dirty && myForm.msgdesc.$invalid">
+							<span ng-if="myForm.msgdesc.$error.required"> 输入不能为空 </span> <span
+								ng-show="myForm.msgdesc.$error.maxlength">不能超过500个字符 </span>
+						</div>
+					</div>
+				</div>
+
+				<div class="form-group">
+					<label class="col-sm-2 control-label">备注:</label>
+					<div class="col-sm-10">
+						<input ng-maxlength="200" type="text"
+							class="form-control ng-pristine ng-untouched ng-valid ng-empty"
+							placeholder="请输入内容" name="mark" ng-model="item.mark">
+						<div class="text-danger"
+							ng-show="myForm.mark.$dirty && myForm.mark.$invalid">
+							<span ng-show="myForm.mark.$error.maxlength">不能超过20个字符 </span>
+						</div>
+					</div>
+				</div>
+
+				<div class="form-group">
+					<label class="col-sm-2 control-label">跳转Url:</label>
+					<div class="col-sm-10">
+						<input ng-maxlength="200" type="text"
+							class="form-control ng-pristine ng-untouched ng-valid ng-empty"
+							placeholder="请输入内容" name="docurl" ng-model="item.docurl">
+						<div class="text-danger"
+							ng-show="myForm.docurl.$dirty && myForm.docurl.$invalid">
+							<span ng-show="myForm.docurl.$error.maxlength">不能超过20个字符 </span>
+						</div>
+					</div>
+				</div>
+
+				<div class="form-group">
+					<label class="col-sm-2 control-label">图片Url:</label>
+					<div class="col-sm-10">
+						<input ng-maxlength="200" type="text"
+							class="form-control ng-pristine ng-untouched ng-valid ng-empty"
+							placeholder="请输入内容" name="imgurl" ng-model="item.imgurl">
+						<div class="text-danger"
+							ng-show="myForm.imgurl.$dirty && myForm.imgurl.$invalid">
+							<span ng-show="myForm.imgurl.$error.maxlength">不能超过20个字符 </span>
+						</div>
+					</div>
+				</div>
+
+
+				<div class="form-group">
+					<label class="col-sm-2 control-label">图片:</label>
+					<div class="col-sm-10">
+						<div class="dropzone" drop-zone dzconfig="dtldzconfig"
+							dzeventHandlers="dtldzevent" enctype="multipart/form-data">
+							<div id="dropzone" class="fallback">
+								<input name="file" type="file" multiple="" />
+							</div>
+						</div>
+						<input type="button" value="保存" text="保存" style="margin-top: 5px;"
+							ng-click="wxsavepic()" class="btn btn-primary"></input>
+					</div>
+				</div>
+
+
+				<div class="form-group">
+					<label class="col-sm-2 control-label">顺序:</label>
+					<div class="col-sm-10">
+						<input ng-maxlength="200" type="number"
+							class="form-control ng-pristine ng-untouched ng-valid ng-empty"
+							placeholder="请输入内容" name="rn" ng-model="item.rn">
+						<div class="text-danger"
+							ng-show="myForm.rn.$dirty && myForm.rn.$invalid">
+							<span ng-show="myForm.rn.$error.maxlength">不能超过20个字符 </span>
+						</div>
+					</div>
+				</div>
+
+			</form>
+
+		</div>
+	</div>
+	<div class="modal-footer">
+		<button ng-click="cancel()" class="btn    btn-warning">取消</button>
+		<button ng-disabled="myForm.$invalid" ng-click="sure()"
+			class="btn   btn-primary">确认</button>
+	</div>
+</div>

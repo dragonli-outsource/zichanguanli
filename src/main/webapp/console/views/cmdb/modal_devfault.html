@@ -1,0 +1,115 @@
+<style>
+@media ( min-width : 992px) {
+	.modal-blg {
+		width: 95%;
+	}
+}
+</style>
+<div class="modal-content">
+	<div class="modal-header">
+		<button ng-click="cancel()" type="button" class="close">
+			<span aria-hidden="true">&times;</span><span class="sr-only">Close</span>
+		</button>
+		<h4 class="modal-title">报修工作</h4>
+	</div>
+	<div class="modal-body">
+		<div class="wrapper wrapper-content animated fadeInRight">
+			<form class="form-horizontal m-t-md " name="myForm" novalidate
+				action="">
+				<div class="form-group">
+					<label class="col-sm-2 control-label"><span
+						class="text-danger">*</span>资产编号:</label>
+					<div class="col-sm-10">
+						<input type="text"
+							class="form-control ng-pristine ng-untouched ng-valid ng-empty"
+							placeholder="请输入内容" name="name" ng-disabled="true"
+							ng-model="item.uuid">
+						<a href="javascript:void()" style="margin-top: 3px;" ng-click="selectzc()"
+							class="btn btn-primary">选择资产</a>
+					</div>
+
+				</div>
+				<div class="form-group">
+					<label class="col-sm-2 control-label">类型:</label>
+					<div class="col-sm-10">
+						<input type="text"
+							class="form-control ng-pristine ng-untouched ng-valid ng-empty"
+							placeholder="请输入内容" name="name" ng-disabled="true"
+							ng-model="item.classname">
+					</div>
+				</div>
+				<div class="form-group">
+					<label class="col-sm-2 control-label">型号:</label>
+					<div class="col-sm-10">
+						<input type="text"
+							class="form-control ng-pristine ng-untouched ng-valid ng-empty"
+							placeholder="请输入内容" name="name" ng-disabled="true"
+							ng-model="item.model">
+					</div>
+				</div>
+				<div class="form-group">
+					<label class="col-sm-2 control-label">序列号:</label>
+					<div class="col-sm-10">
+						<input type="text"
+							class="form-control ng-pristine ng-untouched ng-valid ng-empty"
+							placeholder="请输入内容" name="name" ng-disabled="true"
+							ng-model="item.sn">
+					</div>
+				</div>
+				<div class="form-group">
+					<label class="col-sm-2 control-label">维护人:</label>
+					<div class="col-sm-10">
+						<input type="text"
+							class="form-control ng-pristine ng-untouched ng-valid ng-empty"
+							placeholder="请输入维护人员" name="url" ng-model="data.f_processuser">
+					</div>
+				</div>
+				<div class="form-group">
+					<label class="col-sm-2 control-label">维护时间:</label>
+					<div class="col-sm-10">
+						<input type="text"
+							class="form-control ng-pristine ng-untouched ng-valid ng-empty"
+							placeholder="请输入维护时间" name="url" ng-model="data.f_processtime">
+					</div>
+				</div>
+				<div class="form-group">
+					<label class="col-sm-2 control-label"><span
+						class="text-danger">*</span>原因:</label>
+					<div class="col-sm-10">
+						<input type="text" required ng-maxlength="100"
+							class="form-control ng-pristine ng-untouched ng-valid ng-empty"
+							placeholder="请输入原因" name="f_reason" ng-model="data.f_reason">
+						<div class="text-danger"
+							ng-if="myForm.f_reason.$dirty && myForm.f_reason.$invalid">
+							<span ng-if="myForm.f_reason.$error.required"> 输入不能为空 </span> <span
+								ng-show="myForm.f_reason.$error.maxlength">不能超过100个字符 </span>
+						</div>
+					</div>
+				</div>
+				<div class="form-group">
+					<label class="col-sm-2 control-label">备注:</label>
+					<div class="col-sm-10">
+						<input type="text" class="form-control " placeholder="请输入备注"
+							name="url" ng-model="data.f_mark">
+					</div>
+				</div>
+				<div class="form-group">
+					<label class="col-sm-2 control-label">附件</label>
+					<div class="col-sm-10">
+						<div class="dropzone" drop-zone dzconfig="dzconfig"
+							dzeventHandlers="dtldzevent" enctype="multipart/form-data">
+							<div id="dropzone" class="fallback">
+								<input name="file" type="file" multiple="" />
+							</div>
+						</div>
+					</div>
+				</div>
+			</form>
+		</div>
+	</div>
+	<div class="modal-footer" style ="text-align:center">
+		<button ng-click="cancel()" class="btn btn-warning">取消</button>
+		<button ng-disabled="myForm.$invalid" ng-click="sure()"
+			class="btn btn-primary">确认</button>
+	</div>
+</div>
