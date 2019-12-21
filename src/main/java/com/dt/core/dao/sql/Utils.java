@@ -21,7 +21,7 @@ public class Utils {
 	}
 
 	public static boolean isDate(Object arg) {
-		boolean b = arg instanceof java.util.Date;
+		boolean b = arg instanceof Date;
 		b = b || (arg instanceof java.sql.Date);
 		b = b || (arg instanceof java.sql.Timestamp);
 		return b;
@@ -88,7 +88,7 @@ public class Utils {
 			}
 		}
 
-		else if (java.util.Date.class.getName().equalsIgnoreCase(type) || type.equalsIgnoreCase("Date")) {
+		else if (Date.class.getName().equalsIgnoreCase(type) || type.equalsIgnoreCase("Date")) {
 			try {
 				return parseDateTime(val);
 			} catch (Exception ex) {
@@ -98,7 +98,7 @@ public class Utils {
 
 		else if (java.sql.Date.class.getName().equalsIgnoreCase(type)) {
 			try {
-				java.util.Date dt = parseDateTime(val);
+				Date dt = parseDateTime(val);
 				if (dt == null)
 					return val;
 				else {
@@ -109,7 +109,7 @@ public class Utils {
 			}
 		} else if (java.sql.Timestamp.class.getName().equalsIgnoreCase(type) || type.equalsIgnoreCase("Timestamp")) {
 			try {
-				java.util.Date dt = parseDateTime(val);
+				Date dt = parseDateTime(val);
 				if (dt == null)
 					return val;
 				else {

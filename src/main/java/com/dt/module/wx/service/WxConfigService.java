@@ -26,7 +26,7 @@ import com.dt.core.common.base.R;
  */
 @Service
 @Configuration
-@PropertySource(value = "classpath:application.properties")
+@PropertySource(value = "classpath:config.properties")
 public class WxConfigService extends BaseService {
 	@Autowired
 	private WxService wxService;

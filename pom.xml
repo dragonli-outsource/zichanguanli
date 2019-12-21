@@ -1,12 +1,6 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0"
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-	<parent>
-		<groupId>org.springframework.boot</groupId>
-		<artifactId>spring-boot-starter-parent</artifactId>
-		<version>2.1.11.RELEASE</version>
-	</parent>
-
 	<modelVersion>4.0.0</modelVersion>
 
 	<groupId>com.dt</groupId>
@@ -19,97 +13,19 @@
 
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-		<!-- spring.version 要屏蔽 -->
-		<!--<spring.version>5.0.7.RELEASE</spring.version>-->
+		<spring.version>5.0.7.RELEASE</spring.version>
 		<ehcache.version>2.10.0</ehcache.version>
 		<shiro.version>1.4.1</shiro.version>
 
-		<!-- slf4j.version 要屏蔽 -->
-		<!--<slf4j.version>1.7.25</slf4j.version>-->
+		<slf4j.version>1.7.25</slf4j.version>
 
 
 	</properties>
 
 	<dependencies>
 
-		<!-- 改造开始 -->
-		<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-web</artifactId>
-			<exclusions>
-				<!-- 想要配置log4j2，就要先去除logging包 -->
-				<exclusion>
-					<groupId>org.springframework.boot</groupId>
-					<artifactId>spring-boot-starter-logging</artifactId>
-				</exclusion>
-				<exclusion>
-					<groupId>ch.qos.logback</groupId>
-					<artifactId>logback-classic</artifactId>
-				</exclusion>
-				<!--<exclusion>-->
-				<!--<groupId>org.slf4j</groupId>-->
-				<!--<artifactId>slf4j-log4j12</artifactId>-->
-				<!--</exclusion>-->
-			</exclusions>
-		</dependency>
-		<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-log4j2</artifactId>
-			<exclusions>
-				<!-- 想要配置log4j2，就要先去除logging包 -->
-				<exclusion>
-					<groupId>org.springframework.boot</groupId>
-					<artifactId>spring-boot-starter-logging</artifactId>
-				</exclusion>
-				<exclusion>
-					<groupId>ch.qos.logback</groupId>
-					<artifactId>logback-classic</artifactId>
-				</exclusion>
-			</exclusions>
-		</dependency>
-		<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-test</artifactId>
-			<scope>test</scope>
-		</dependency>
-		<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot</artifactId>
-		</dependency>
-		<dependency>
-			<groupId>log4j</groupId>
-			<artifactId>log4j</artifactId>
-			<version>1.2.17</version>
-		</dependency>
-		<!--<dependency>-->
-			<!--<groupId>org.apache.logging.log4j</groupId>-->
-			<!--<artifactId>log4j-api</artifactId>-->
-			<!--&lt;!&ndash;<version>2.13.0</version>&ndash;&gt;-->
-		<!--</dependency>-->
 
-		<!-- 如果用了mybatis -->
-		<dependency>
-			<groupId>org.mybatis.spring.boot</groupId>
-			<artifactId>mybatis-spring-boot-starter</artifactId>
-			<version>2.1.1</version>
-		</dependency>
 
-		<dependency>
-			<groupId>org.springframework</groupId>
-			<artifactId>spring-jdbc</artifactId>
-			<!--<version>${spring.version}</version>-->
-		</dependency>
-
-		<!--<dependency>-->
-			<!--<groupId>org.springframework.boot</groupId>-->
-			<!--<artifactId>spring-boot</artifactId>-->
-			<!--<version>4.3.8.RELEASE</version>-->
-		<!--</dependency>-->
-
-		<!-- 改造结束 -->
-
-		<!-- slf4j-log4j 最好屏蔽 -->
-		<!--
 		<dependency>
 			<groupId>org.slf4j</groupId>
 			<artifactId>slf4j-api</artifactId>
@@ -121,7 +37,6 @@
 			<artifactId>slf4j-log4j12</artifactId>
 			<version>1.7.25</version>
 		</dependency>
-		-->
 
 		<!-- https://mvnrepository.com/artifact/com.bstek.uflo/uflo-console -->
 		<dependency>
@@ -149,11 +64,11 @@
 
 
 		<!-- https://mvnrepository.com/artifact/commons-logging/commons-logging -->
-		<!--<dependency>-->
-			<!--<groupId>commons-logging</groupId>-->
-			<!--<artifactId>commons-logging</artifactId>-->
-			<!--<version>1.2</version>-->
-		<!--</dependency>-->
+		<dependency>
+			<groupId>commons-logging</groupId>
+			<artifactId>commons-logging</artifactId>
+			<version>1.2</version>
+		</dependency>
 
 		<!-- https://mvnrepository.com/artifact/io.github.esirotkin/zabbix-api -->
 		<!-- https://mvnrepository.com/artifact/org.apache.httpcomponents/httpclient -->
@@ -178,11 +93,11 @@
 
 
 		<!-- https://mvnrepository.com/artifact/org.apache.commons/commons-lang3 -->
-		<!--<dependency>-->
-			<!--<groupId>org.apache.commons</groupId>-->
-			<!--<artifactId>commons-lang3</artifactId>-->
-			<!--<version>3.7</version>-->
-		<!--</dependency>-->
+		<dependency>
+			<groupId>org.apache.commons</groupId>
+			<artifactId>commons-lang3</artifactId>
+			<version>3.7</version>
+		</dependency>
 
 
 		<dependency>
@@ -240,18 +155,18 @@
 		<!-- <dependency> <groupId>log4j</groupId> <artifactId>log4j</artifactId> 
 			<version>1.2.17</version> </dependency> -->
 
-		<!--<dependency>-->
-			<!--<groupId>org.apache.logging.log4j</groupId>-->
-			<!--<artifactId>log4j-core</artifactId>-->
-			<!--<version>2.12.1</version>-->
-		<!--</dependency>-->
+		<dependency>
+			<groupId>org.apache.logging.log4j</groupId>
+			<artifactId>log4j-core</artifactId>
+			<version>2.12.1</version>
+		</dependency>
 
 		<!-- https://mvnrepository.com/artifact/commons-logging/commons-logging -->
-		<!--<dependency>-->
-			<!--<groupId>commons-logging</groupId>-->
-			<!--<artifactId>commons-logging</artifactId>-->
-			<!--<version>1.2</version>-->
-		<!--</dependency>-->
+		<dependency>
+			<groupId>commons-logging</groupId>
+			<artifactId>commons-logging</artifactId>
+			<version>1.2</version>
+		</dependency>
 
 
 		<!-- https://mvnrepository.com/artifact/cn.afterturn/easypoi-base -->
@@ -296,41 +211,38 @@
 		<!-- <dependency> <groupId>junit</groupId> <artifactId>junit</artifactId> 
 			<version>4.12</version> <scope>test</scope> </dependency> -->
 		<!-- spring -->
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-messaging</artifactId>
+			<version>${spring.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-web</artifactId>
+			<version>${spring.version}</version>
+		</dependency>
 
-		<!--若此前有spring framework引用，去掉-->
-		<!--<dependency>-->
-			<!--<groupId>org.springframework</groupId>-->
-			<!--<artifactId>spring-messaging</artifactId>-->
-			<!--<version>${spring.version}</version>-->
-		<!--</dependency>-->
-		<!--<dependency>-->
-			<!--<groupId>org.springframework</groupId>-->
-			<!--<artifactId>spring-web</artifactId>-->
-			<!--<version>${spring.version}</version>-->
-		<!--</dependency>-->
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-context</artifactId>
+			<version>${spring.version}</version>
+		</dependency>
 
-		<!--<dependency>-->
-			<!--<groupId>org.springframework</groupId>-->
-			<!--<artifactId>spring-context</artifactId>-->
-			<!--<version>${spring.version}</version>-->
-		<!--</dependency>-->
-
-		<!--<dependency>-->
-			<!--<groupId>org.springframework</groupId>-->
-			<!--<artifactId>spring-context-support</artifactId>-->
-			<!--<version>${spring.version}</version>-->
-		<!--</dependency>-->
-		<!--<dependency>-->
-			<!--<groupId>org.springframework</groupId>-->
-			<!--<artifactId>spring-webmvc</artifactId>-->
-			<!--<version>${spring.version}</version>-->
-		<!--</dependency>-->
-		<!--<dependency>-->
-			<!--<groupId>org.springframework</groupId>-->
-			<!--<artifactId>spring-jdbc</artifactId>-->
-			<!--<version>${spring.version}</version>-->
-		<!--</dependency>-->
-
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-context-support</artifactId>
+			<version>${spring.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-webmvc</artifactId>
+			<version>${spring.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-jdbc</artifactId>
+			<version>${spring.version}</version>
+		</dependency>
 		<!-- <dependency> <groupId>org.springframework</groupId> <artifactId>spring-jms</artifactId> 
 			<version>${spring.version}</version> </dependency> -->
 
@@ -368,11 +280,7 @@
 			<version>2.6.11</version>
 
 		</dependency>
-		<dependency>
-			<groupId>javax.cache</groupId>
-			<artifactId>cache-api</artifactId>
-			<version>1.1.1</version>
-		</dependency>
+
 
 		<!-- mysql -->
 		<!-- https://mvnrepository.com/artifact/mysql/mysql-connector-java -->
@@ -499,5 +407,20 @@
 			<version>1.2</version>
 		</dependency>
 	</dependencies>
+
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<version>3.2</version>
+				<configuration>
+					<source>1.8</source>
+					<target>1.8</target>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
+
 
 </project>

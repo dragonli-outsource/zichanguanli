@@ -684,7 +684,7 @@ public class SwingShell {
 		loginButton = new JButton("Login");
 
 		loginButton.addActionListener(new ActionListener() {
-			public void actionPerformed(java.awt.event.ActionEvent e) {
+			public void actionPerformed(ActionEvent e) {
 				loginPressed();
 			}
 		});

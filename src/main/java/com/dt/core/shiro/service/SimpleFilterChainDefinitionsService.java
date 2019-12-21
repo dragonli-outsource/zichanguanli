@@ -55,7 +55,7 @@ public class SimpleFilterChainDefinitionsService {
 	public Section obtainPermission() {
 		Ini ini = new Ini();
 		ini.load(filterChainDefinitions);
-		Ini.Section section = ini.getSection(Ini.DEFAULT_SECTION_NAME);
+		Section section = ini.getSection(Ini.DEFAULT_SECTION_NAME);
 		log.info("size:" + section.size());
 		return section;
 	}

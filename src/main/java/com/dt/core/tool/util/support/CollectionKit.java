@@ -152,7 +152,7 @@ public class CollectionKit {
 	 * @return 排序后的Set
 	 */
 	public static List<Entry<Long, Long>> sortEntrySetToList(Set<Entry<Long, Long>> set) {
-		List<Entry<Long, Long>> list = new LinkedList<Map.Entry<Long, Long>>(set);
+		List<Entry<Long, Long>> list = new LinkedList<Entry<Long, Long>>(set);
 		Collections.sort(list, new Comparator<Entry<Long, Long>>() {
 
 			@Override

@@ -1,4 +1,4 @@
-//package com.dt.module.om.term.websocket;
+package com.dt.module.om.term.websocket;//package com.dt.module.om.term.websocket;
 //
 //import java.io.InputStream;
 //import org.springframework.web.socket.TextMessage;

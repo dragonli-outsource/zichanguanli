@@ -12,13 +12,13 @@
 	http://www.springframework.org/schema/tx/spring-tx.xsd
 	http://www.springframework.org/schema/aop
 	http://www.springframework.org/schema/aop/spring-aop.xsd">
-	<!--<bean id="propertyConfigurer"-->
-		<!--class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">-->
-		<!--<property name="order" value="1" />-->
-		<!--<property name="ignoreUnresolvablePlaceholders" value="true" />-->
-		<!--<property name="location" value="classpath:application.properties" />-->
-		<!--<property name="fileEncoding" value="utf-8" />-->
-	<!--</bean>-->
+	<bean id="propertyConfigurer"
+		class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+		<property name="order" value="1" />
+		<property name="ignoreUnresolvablePlaceholders" value="true" />
+		<property name="location" value="classpath:config.properties" />
+		<property name="fileEncoding" value="utf-8" />
+	</bean>
 	<!-- 扫描所有自定义service -->
 	<context:component-scan base-package="**.impl" />
 	<!-- 自定义处理器 -->

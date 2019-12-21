@@ -103,7 +103,7 @@ public class MyAuthenticationFilter extends AuthenticatingFilter {
 	 * <p/>
 	 * RememberMe will be <code>true</code> if the parameter value equals any of
 	 * those supported by
-	 * {@link org.apache.shiro.web.util.WebUtils#isTrue(javax.servlet.ServletRequest, String)
+	 * {@link WebUtils#isTrue(ServletRequest, String)
 	 * WebUtils.isTrue(request,value)}, <code>false</code> otherwise.
 	 * 
 	 * @param rememberMeParam

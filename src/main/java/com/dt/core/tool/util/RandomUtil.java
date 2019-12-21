@@ -25,19 +25,19 @@ import org.apache.commons.lang3.Validate;
  * 随机数工具类.
  * 
  * <ul>
- * <li>{@link java.lang.Math#random()}底层也是调用的 new Random(),值＝Random
+ * <li>{@link Math#random()}底层也是调用的 new Random(),值＝Random
  * nextDouble()</li>
- * <li>把 {@link java.util.Random}对象作为一个全局实例(static)来使用.Java中
- * {@link java.util.Random} 是线程安全的(内部进行了加锁处理);</li>
+ * <li>把 {@link Random}对象作为一个全局实例(static)来使用.Java中
+ * {@link Random} 是线程安全的(内部进行了加锁处理);</li>
  * <li>伪随机数</li>
  * <li>生成随机数的算法有很多种,最简单也是最常用的就是 "线性同余法":第n+1个数=(第n个数*29+37) %
  * 1000,其中%是"求余数"运算符.</li>
  * </ul>
  *
  * @author <a href="http://feitianbenyue.iteye.com/">feilong</a>
- * @see java.lang.Math#random()
+ * @see Math#random()
  * @see org.apache.commons.lang3.RandomUtils
- * @see org.apache.commons.lang3.RandomStringUtils
+ * @see RandomStringUtils
  * @since 1.0.0
  */
 public final class RandomUtil {
@@ -179,7 +179,7 @@ public final class RandomUtil {
 	 *         如果 <code>length</code> {@code <=0}, 抛出
 	 *         {@link IllegalArgumentException}
 	 * 
-	 * @see org.apache.commons.lang3.RandomStringUtils#random(int, String)
+	 * @see RandomStringUtils#random(int, String)
 	 */
 	public static String createRandomFromString(String str, int length) {
 		Validate.notBlank(str, "str can't be null/empty!");

@@ -60,7 +60,7 @@ public class StoreSqlService extends BaseService {
 		// 处理自定义变量,格式:@var@
 		Iterator<Entry<String, Object>> i = ps.entrySet().iterator();
 		while (i.hasNext()) {
-			Entry entry = (java.util.Map.Entry) i.next();
+			Entry entry = (Entry) i.next();
 			String key = entry.getKey().toString();
 			String value = (String) entry.getValue();
 			_log.info("key:" + key + ",value:" + value);

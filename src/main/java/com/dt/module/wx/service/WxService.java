@@ -62,7 +62,7 @@ import com.dt.module.wx.util.WeiXX509TrustManager;
  */
 @Service
 @Configuration
-@PropertySource(value = "classpath:application.properties")
+@PropertySource(value = "classpath:config.properties")
 public class WxService extends BaseService {
 
 	@Value("${wx.appId}")

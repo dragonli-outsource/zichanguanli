@@ -21,7 +21,7 @@ import com.dt.module.wx.service.WxService;
 @Controller
 @RequestMapping("/api")
 @Configuration
-@PropertySource(value = "classpath:application.properties")
+@PropertySource(value = "classpath:config.properties")
 public class WxConfigController extends BaseController {
 
     

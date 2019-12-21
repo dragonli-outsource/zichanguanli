@@ -27,7 +27,7 @@ import com.dt.module.db.DB;
  */
 @Component("myServletContextListener")
 @Configuration
-@PropertySource(value = "classpath:application.properties")
+@PropertySource(value = "classpath:config.properties")
 public class ApplicationContextListener implements ApplicationListener<ContextRefreshedEvent> {
 	private static Logger _log = LoggerFactory.getLogger(ApplicationContextListener.class);
 

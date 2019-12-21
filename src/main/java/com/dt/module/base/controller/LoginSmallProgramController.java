@@ -40,7 +40,7 @@ import com.dt.module.base.service.impl.LoginService;
 @Controller
 @RequestMapping("/api")
 @Configuration
-@PropertySource(value = "classpath:application.properties")
+@PropertySource(value = "classpath:config.properties")
 public class LoginSmallProgramController extends BaseController {
 
 	 
