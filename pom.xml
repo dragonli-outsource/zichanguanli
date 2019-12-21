@@ -19,11 +19,13 @@
 
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-		<spring.version>5.0.7.RELEASE</spring.version>
+		<!-- spring.version 要屏蔽 -->
+		<!--<spring.version>5.0.7.RELEASE</spring.version>-->
 		<ehcache.version>2.10.0</ehcache.version>
 		<shiro.version>1.4.1</shiro.version>
 
-		<slf4j.version>1.7.25</slf4j.version>
+		<!-- slf4j.version 要屏蔽 -->
+		<!--<slf4j.version>1.7.25</slf4j.version>-->
 
 
 	</properties>
@@ -79,11 +81,11 @@
 			<artifactId>log4j</artifactId>
 			<version>1.2.17</version>
 		</dependency>
-		<dependency>
-			<groupId>org.apache.logging.log4j</groupId>
-			<artifactId>log4j-api</artifactId>
-			<!--<version>2.13.0</version>-->
-		</dependency>
+		<!--<dependency>-->
+			<!--<groupId>org.apache.logging.log4j</groupId>-->
+			<!--<artifactId>log4j-api</artifactId>-->
+			<!--&lt;!&ndash;<version>2.13.0</version>&ndash;&gt;-->
+		<!--</dependency>-->
 
 		<!-- 如果用了mybatis -->
 		<dependency>
@@ -238,18 +240,18 @@
 		<!-- <dependency> <groupId>log4j</groupId> <artifactId>log4j</artifactId> 
 			<version>1.2.17</version> </dependency> -->
 
-		<dependency>
-			<groupId>org.apache.logging.log4j</groupId>
-			<artifactId>log4j-core</artifactId>
-			<version>2.12.1</version>
-		</dependency>
+		<!--<dependency>-->
+			<!--<groupId>org.apache.logging.log4j</groupId>-->
+			<!--<artifactId>log4j-core</artifactId>-->
+			<!--<version>2.12.1</version>-->
+		<!--</dependency>-->
 
 		<!-- https://mvnrepository.com/artifact/commons-logging/commons-logging -->
-		<dependency>
-			<groupId>commons-logging</groupId>
-			<artifactId>commons-logging</artifactId>
-			<version>1.2</version>
-		</dependency>
+		<!--<dependency>-->
+			<!--<groupId>commons-logging</groupId>-->
+			<!--<artifactId>commons-logging</artifactId>-->
+			<!--<version>1.2</version>-->
+		<!--</dependency>-->
 
 
 		<!-- https://mvnrepository.com/artifact/cn.afterturn/easypoi-base -->
@@ -366,7 +368,11 @@
 			<version>2.6.11</version>
 
 		</dependency>
-
+		<dependency>
+			<groupId>javax.cache</groupId>
+			<artifactId>cache-api</artifactId>
+			<version>1.1.1</version>
+		</dependency>
 
 		<!-- mysql -->
 		<!-- https://mvnrepository.com/artifact/mysql/mysql-connector-java -->

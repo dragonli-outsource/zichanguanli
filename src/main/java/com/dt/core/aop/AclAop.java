@@ -43,7 +43,7 @@ import com.dt.module.db.DB;
  */
 @Aspect
 @Component
-@PropertySource(value = "classpath:config.properties")
+@PropertySource(value = "classpath:application.properties")
 public class AclAop {
 
 	@Value("${app.recdb}")

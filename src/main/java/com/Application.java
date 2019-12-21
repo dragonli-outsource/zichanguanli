@@ -5,11 +5,22 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration;
+import org.springframework.boot.autoconfigure.web.servlet.WebMvcAutoConfiguration;
 import org.springframework.boot.web.server.ConfigurableWebServerFactory;
 import org.springframework.boot.web.server.WebServerFactoryCustomizer;
 import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.ImportResource;
 
-@SpringBootApplication(exclude = {DataSourceAutoConfiguration.class},scanBasePackages={"com"})
+//将web.xml里的contextConfigLocation部分，移至此处
+@ImportResource(locations= {
+//        "classpath:applicationContext.xml",
+        "classpath:ds_db.xml",
+//        "classpath:applicationContext-mybatis.xml",
+//        "classpath:applicationContext-shiro.xml",
+//        "classpath:applicationContext-druid.xml",
+//        "classpath:uflo-console-context.xml",
+})
+@SpringBootApplication(exclude = {DataSourceAutoConfiguration.class},scanBasePackages={"com.dev","com.dt"})
 public class Application  implements WebServerFactoryCustomizer<ConfigurableWebServerFactory> {
 
 
@@ -17,7 +28,7 @@ public class Application  implements WebServerFactoryCustomizer<ConfigurableWebS
     @Value("${http-port:8080}")
     protected int port;
 
-
+    WebMvcAutoConfiguration ss;
 
 
     /**

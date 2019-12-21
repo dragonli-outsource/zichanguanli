@@ -29,7 +29,7 @@ import org.slf4j.LoggerFactory;
  */
 @Service
 @Configuration
-@PropertySource(value = "classpath:config.properties")
+@PropertySource(value = "classpath:application.properties")
 public class CoreService extends BaseService {
 
 	private static Logger _log = LoggerFactory.getLogger(CoreService.class);
