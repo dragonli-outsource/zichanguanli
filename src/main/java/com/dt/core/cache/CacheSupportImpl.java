@@ -3,6 +3,7 @@ package com.dt.core.cache;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.cache.CacheManager;
 import org.springframework.stereotype.Component;
 import org.springframework.util.MethodInvoker;
@@ -26,6 +27,7 @@ public class CacheSupportImpl implements CacheSupport, InvocationRegistry {
 	public static Map<String, ConcurrentHashMap<String, CachedInvocation>> cacheInvocationsMap;
 
 	@Autowired
+	@Qualifier("cacheManager")
 	private CacheManager cacheManager;
 
 	private void refreshCache(CachedInvocation invocation, String cacheName) {
